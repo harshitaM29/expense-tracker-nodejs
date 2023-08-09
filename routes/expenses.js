@@ -10,4 +10,6 @@ router.post('/expenses',expenseController.postExpenseData);
 
 router.delete('/expenses/:id',expenseController.deleteExpenseData);
 
+router.put('/edit-expenses/:id',expenseController.editExpenseData)
+
 module.exports = router;
