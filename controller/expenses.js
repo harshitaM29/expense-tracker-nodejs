@@ -16,3 +16,15 @@ exports.postExpenseData = async(req,res,next) => {
     });
     res.status(201).json(expenseData);
 }
+exports.deleteExpenseData = (req,res,next) => {
+    const id = req.params.id;
+
+    Expenses.findByPk(id)
+    .then(user => {
+        return user.destroy();
+    })
+    .then(result => {
+        console.log('Destroyed Expense');
+    })
+    .catch(err => console.log(err));
+}

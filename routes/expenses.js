@@ -8,4 +8,6 @@ router.get('/expenses',expenseController.getExpenseData);
 
 router.post('/expenses',expenseController.postExpenseData);
 
+router.delete('/expenses/:id',expenseController.deleteExpenseData);
+
 module.exports = router;
