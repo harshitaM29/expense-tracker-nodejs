@@ -2,8 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/expenses',);
+const expenseController = require('../controller/expenses');
 
-router.post('/expenses');
+router.get('/expenses',expenseController.getExpenseData);
+
+router.post('/expenses',expenseController.postExpenseData);
 
 module.exports = router;

@@ -12,4 +12,10 @@ app.use(bodyParser.json({extended:false}));
 
 app.use(expensesRoutes);
 
-app.listen(4000);
+
+sequelize.sync().then(res => {
+    app.listen(4000);
+})
+.catch(err => {
+    console.log(err)
+})
